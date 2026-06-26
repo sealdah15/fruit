@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>কবিতা ও ভিডিও</title>
+    <style>
+        body {
+            font-family: 'Kalpurush', Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .poem-container {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.5rem;
+            line-height: 1.8;
+            color: #333;
+        }
+        /* আঙ্কোর ট্যাগের স্টাইল */
+        .video-link {
+            color: #007bff;
+            text-decoration: underline;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .video-link:hover {
+            color: #0056b3;
+        }
+        /* ভিডিও প্লেয়ারের স্টাইল */
+        .video-container {
+            display: none; /* প্রথমে ভিডিওটি লুকানো থাকবে */
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        video {
+            width: 100%;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="poem-container">
+        <p>মেঘের কোলে রোদ হেসেছে,<br>
+        বাদল গেছে টুটি।<br>
+        আজ আমাদের <a class="video-link" onclick="playVideo()">নীল আকাশে</a>,<br>
+        ছুটি ও ভাই ছুটি।</p>
+    </div>
+
+    <div class="video-container" id="videoBox">
+        <video id="myVideo" controls>
+            <source src="your-video.mp4" type="video/mp4">
+            আপনার ব্রাউজারটি ভিডিও ট্যাগ সাপোর্ট করে না।
+        </video>
+    </div>
+
+    <script>
+        function playVideo() {
+            var videoContainer = document.getElementById("videoBox");
+            var video = document.getElementById("myVideo");
+
+            // প্রথমে ভিডিও কন্টেইনারটি দেখাবে (Block করবে)
+            videoContainer.style.display = "block";
+            
+            // ভিডিওটি প্লে করবে
+            video.play();
+        }
+    </script>
+
+</body>
+</html>
